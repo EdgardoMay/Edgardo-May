@@ -1,0 +1,8 @@
+# Requirements for ETL Project
+
+apache-airflow==2.8.1   
+requests==2.31.0         # Para realizar peticiones HTTP a las APIs
+pymongo==4.6.1           # Para conectarse y operar con MongoDB
+python-dotenv==1.0.1     # Para manejar variables de entorno (opcional)
+Flask-Session==0.4.0 
+    

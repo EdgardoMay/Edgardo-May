@@ -1,0 +1,26 @@
+# Dockerfile
+FROM python:3.10-slim
+
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    AIRFLOW_HOME=/app
+
+# Create working directory
+WORKDIR /app
+
+# Install system dependencies for Airflow
+RUN apt-get update && apt-get install -y build-essential default-libmysqlclient-dev
+
+# Install Python dependencies
+COPY requirements.txt ./
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Copy your project files into the container
+COPY . .
+
+# Expose Airflow webserver port
+EXPOSE 8080
+
+# Prevent stale PID file issue and start Airflow
+CMD rm -f /app/airflow-webserver.pid && airflow standalone
