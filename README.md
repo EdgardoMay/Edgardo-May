@@ -15,7 +15,7 @@ Diseñar un sistema ETL batch que integre múltiples fuentes de datos públicas 
 | Componente      | Tecnología       | Puerto | Descripción                                              |
 |-----------------|------------------|--------|----------------------------------------------------------|
 | Orquestador     | Apache Airflow   | 8080   | Orquesta tareas ETL y visualiza DAGs                    |
-| Base de datos   | PostgreSQL       | N/A    | Almacén de metadatos de Airflow                         |
+| Base de datos   | PostgreSQL       | INT    | Almacén de metadatos de Airflow                         |
 | Almacenamiento  | MongoDB          | 27017  | Guarda datos crudos y transformados                     |
 | Dashboard       | Streamlit        | 8501   | Interfaz web para visualizar los datos procesados       |
 
